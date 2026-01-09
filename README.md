@@ -5,7 +5,7 @@
 
 ## Description
 
-Open source end-to-end encrypted peer-to-peer chat application
+Open-source real-time peer-to-peer chat application with end-to-end encryption
 
 ## Table of Contents
 - [Information](#information)
