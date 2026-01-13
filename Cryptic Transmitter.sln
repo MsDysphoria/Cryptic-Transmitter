@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptic Transmitter", "Cryptic Transmitter\Cryptic Transmitter.csproj", "{56CDF9DB-7193-4362-BECB-0986C4897547}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56CDF9DB-7193-4362-BECB-0986C4897547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CDF9DB-7193-4362-BECB-0986C4897547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CDF9DB-7193-4362-BECB-0986C4897547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CDF9DB-7193-4362-BECB-0986C4897547}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97F5A26D-6CFB-4727-8217-76E095B21B7D}
+	EndGlobalSection
+EndGlobal

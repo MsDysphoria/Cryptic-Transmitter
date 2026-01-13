@@ -1,0 +1,972 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cryptic_Transmitter"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" x:Class="Cryptic_Transmitter.MainWindow"
+        mc:Ignorable="d"
+        Title="Cryptic Transmitter" Height="610" Width="524"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="False"
+        MouseDown="Window_MouseDown" ResizeMode="NoResize" SizeToContent="Manual" Icon="/Images/CT Logo B.png">
+    <Window.Background>
+        <ImageBrush Stretch="UniformToFill"/>
+    </Window.Background>
+
+    <Window.Resources>
+        <Storyboard x:Key="FadeIn_Info">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="WhatHeader" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="WhatText" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.5000000" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="WhatHeader" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00.8000000" Value="DarkGray"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.2000000" Value="sc#1, 0.730460763, 0.730460763, 0.730460763"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.7000000" Value="DarkGray"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="WhatHeader" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="-21"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="WhereHeader" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="-21"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="-0.003"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="WhereHeader" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="WhereHeader" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:01.3000000" Value="DarkGray"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.7000000" Value="#FFDEDEDE"/>
+                <EasingColorKeyFrame KeyTime="00:00:02.2000000" Value="DarkGray"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="WhereText" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:01" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:02" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="HowText" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:01" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.5000000" Value="Transparent"/>
+                <EasingColorKeyFrame KeyTime="00:00:02.5000000" Value="White"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HowHeader" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.7000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="HowHeader" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <EasingDoubleKeyFrame KeyTime="00:00:01.2000000" Value="-21"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:01.7000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="HowHeader" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:01.2000000" Value="DarkGray"/>
+                <EasingColorKeyFrame KeyTime="00:00:01.7000000" Value="DarkGray"/>
+                <EasingColorKeyFrame KeyTime="00:00:02.2000000" Value="#FFDEDEDE"/>
+                <EasingColorKeyFrame KeyTime="00:00:02.7000000" Value="DarkGray"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00.5000000" Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="btnInfo" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btnInfo" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Info" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="FadeOut_Info">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00.5000000" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetName="btnInfo" Storyboard.TargetProperty="(UIElement.IsEnabled)">
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="False"/>
+                <DiscreteBooleanKeyFrame KeyTime="00:00:00.5000000" Value="True"/>
+            </BooleanAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="btnInfo" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Info" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <EasingDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="00:00:00.5000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InfoGrid" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="00:00:00.5000000" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="GlowAuthor">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetName="Author" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)">
+                <EasingColorKeyFrame KeyTime="00:00:00" Value="DarkGray"/>
+                <EasingColorKeyFrame KeyTime="00:00:00.5000000" Value="#FFF7F7F7"/>
+                <EasingColorKeyFrame KeyTime="00:00:01" Value="DarkGray"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/bg.jpg"
+                        Stretch="Fill" TileMode="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="3"                    
+            BorderThickness="3"
+            Opacity="0.95" Height="610" VerticalAlignment="Center">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF07247D" Offset="0"/>
+                    <GradientStop Color="#FF262F5F" Offset="0.75"/>
+                    <GradientStop Color="#FF3378AD" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Grid HorizontalAlignment="Right" Width="542">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7.75"/>
+                    <RowDefinition Height="22.25"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Image HorizontalAlignment="Left" Height="26" Margin="30,2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="506" Source="/Images/Panel.png" Stretch="UniformToFill"/>
+
+                <Image x:Name="Logo" gif:ImageBehavior.AnimatedSource="/Images/ListeningStarted.gif"
+                gif:ImageBehavior.RepeatBehavior="1"
+                gif:ImageBehavior.AnimateInDesignMode="False"
+                gif:ImageBehavior.AutoStart="True" Margin="466,180,6,384" Grid.Row="2" RenderTransformOrigin="0.731,0.573" Source="/Images/ListeningStarted.gif" Stretch="Fill" />
+
+                <Image HorizontalAlignment="Right" Height="68" Margin="0,97,76,0" Grid.Row="2" VerticalAlignment="Top" Width="118" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image HorizontalAlignment="Left" Height="33" Margin="30,64,0,0" Grid.Row="2" VerticalAlignment="Top" Width="318" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image HorizontalAlignment="Right" Height="34" Margin="0,63,6,0" Grid.Row="2" VerticalAlignment="Top" Width="188" Source="/Images/Panel.png" Stretch="Fill"/>
+
+                <Image HorizontalAlignment="Left" Margin="30,62,0,500" Grid.Row="2" Width="318" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image HorizontalAlignment="Left" Height="36" Margin="30,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="318" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image x:Name="TransmissionPanel2" Height="54" Margin="30,357,6,0" Grid.Row="2" VerticalAlignment="Top" Source="/Images/PanelDisabled.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+
+                <Image HorizontalAlignment="Left" Height="35" Margin="348,28,0,0" Grid.Row="2" VerticalAlignment="Top" Width="188" Source="/Images/Panel.png" Stretch="Fill"/>
+
+                <Image x:Name="TransmissionPanel1" HorizontalAlignment="Right" Height="25" Margin="0,165,76,0" Grid.Row="2" VerticalAlignment="Top" Width="436" Source="/Images/PanelDisabled.png" Stretch="UniformToFill"/>
+
+                <Image HorizontalAlignment="Left" Height="26" Margin="30,411,0,0" Grid.Row="2" VerticalAlignment="Top" Width="506" Source="/Images/Panel.png" Stretch="UniformToFill"/>
+
+                <Grid Grid.Row="0" Grid.RowSpan="2" Margin="25,0,-25,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                               Foreground="DarkGray"
+                               FontFamily="Montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="30,0,7,0" Grid.ColumnSpan="2" Text="Cryptic Transmitter">
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect></TextBlock>
+
+                    <Button x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Click="btnMinimize_Click" Margin="462,0,0,0">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF0889B5"/>
+                                <GradientStop Color="#FF91C6CA" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnClose_Click">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF9C0000"/>
+                                <GradientStop Color="#FFDA4F4F" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnInfo"                           
+                        BorderThickness="0"
+                        Content="?"
+                        Foreground="White"
+                        FontSize="16"
+                        FontFamily="Montserrat"
+                        Cursor="Hand"
+                        Margin="437,0,25,0" Click="btnInfo_Click" ToolTip="Info">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                        </Button.Effect>
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF1BA537"/>
+                                <GradientStop Color="#FF54C164" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="18" Height="18"
+                                    CornerRadius="9"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontSize="15"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="41,171,404,0" Grid.Row="2" Height="19">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect><Run Language="tr-tr" Text="Transmission"/></TextBlock>
+                <Grid x:Name="DecryptTrafficGrid" Height="167" Margin="24,364,25,0" Grid.Row="2" VerticalAlignment="Top" Visibility="Hidden">
+                    <ComboBox HorizontalAlignment="Left" Margin="425,55,0,0" VerticalAlignment="Top" Width="68" SelectedIndex="0" Height="20" BorderThickness="1,1,1,1" FontSize="10">
+                        <ComboBoxItem Content="AES-256"/>
+                        <ComboBoxItem Content="AES-192"/>
+                        <ComboBoxItem Content="AES-128"/>
+                    </ComboBox>
+                    <TextBox x:Name="AESinput_DecryptTraffic" HorizontalAlignment="Left" Margin="38,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387" Height="20"/>
+                    <TextBlock
+                        Foreground="#FFD6D6D6"
+                        FontSize="16"
+                        FontFamily="Bahnschrift"
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Margin="0,56,459,0" Text="AES:" Height="19">
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect></TextBlock>
+                    <TextBox x:Name="IVinput_DecryptTraffic" HorizontalAlignment="Left" Margin="38,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387"/>
+                    <TextBlock
+                        Foreground="#FFD6D6D6"
+                        FontSize="16"
+                        FontFamily="Bahnschrift"
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Margin="16,85,458,0" Text="IV:" Height="19">
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect></TextBlock>
+                    <TextBlock
+                        Foreground="#FF8DC588"
+                        FontSize="16"
+                        FontFamily="Bahnschrift"
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Margin="387,0,0,0" Text="Decrypt Traffic" Height="19">
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect></TextBlock>
+                    <TextBlock
+                        Foreground="#FFD6D6D6"
+                        FontSize="16"
+                        FontFamily="Bahnschrift"
+                        Grid.Column="0"
+                        VerticalAlignment="Top"
+                        Margin="1,1,374,0" Text="Encrypted Body:" Height="19">
+                        <TextBlock.Effect>
+                            <DropShadowEffect/>
+                        </TextBlock.Effect></TextBlock>
+                    <TextBox x:Name="EncryptedBody" HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="492" Height="20"/>
+                    <TextBox x:Name="DecryptedOutput" TextWrapping="Wrap" Background="Black" Foreground="#FF11E400" FontFamily="Segoe UI Emoji" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Padding="5,5,5,5" Margin="1,113,0,0" Text="Decrypted Body" IsReadOnly="True"/>
+                    <Rectangle HorizontalAlignment="Center" Height="54" Margin="0,113,0,0" Stroke="#FF158C04" VerticalAlignment="Top" Width="492" IsHitTestVisible="False"/>
+                </Grid>
+                <Grid x:Name="ConsoleGrid" Margin="33,391,0,0" HorizontalAlignment="Left" Grid.Row="2" Width="288" Height="0" VerticalAlignment="Top">
+                    <ScrollViewer x:Name="ConsoleScrollViewer" VerticalScrollBarVisibility="Hidden" Margin="-3,46,-215,-176" Width="502">
+                        <TextBox x:Name="ConsoleWindow" TextWrapping="Wrap" Background="#CC000000" Foreground="White" 
+         FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+         TextOptions.TextRenderingMode="ClearType" Padding="5" IsReadOnly="True" TextAlignment="Center">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Run}">
+                                    <Setter Property="Foreground" Value="#FFA31515" />
+                                    <Setter Property="FontFamily" Value="Cascadia Mono" />
+                                    <Setter Property="FontSize" Value="12.666666666666666" />
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </ScrollViewer>
+                </Grid>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontSize="15"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="40,416,404,0" Text="Event Viewer" Grid.Row="2" Height="19">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <Grid x:Name="ChatWindowGrid" Margin="44,4,0,0" HorizontalAlignment="Left" Grid.Row="2" Width="288" Height="0" VerticalAlignment="Top">
+                    <ScrollViewer x:Name="ChatWindowScrollViewer" VerticalScrollBarVisibility="Hidden" Margin="-12,186,-202,-353" Width="502">
+                        <TextBox x:Name="ChatWindow" TextWrapping="Wrap" Background="#CC000000" Foreground="White" 
+                            FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                            TextOptions.TextRenderingMode="ClearType" Padding="5" IsReadOnly="True" Width="502">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Run}">
+                                    <Setter Property="Foreground" Value="#FFA31515" />
+                                    <Setter Property="FontFamily" Value="Cascadia Mono" />
+                                    <Setter Property="FontSize" Value="12.666666666666666" />
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </ScrollViewer>
+                </Grid>
+                <TextBox x:Name="MessageInput" HorizontalAlignment="Left" Margin="40,365,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="423" Background="Black" Foreground="White" Height="38" Padding="2,0,0,0" TextChanged="MessageInput_TextChanged"/>
+                <Rectangle Margin="32,190,8,217" Stroke="#FF8E8E8E" Grid.Row="2"/>
+                <Rectangle Margin="32,437,8,6" Stroke="#FFABADB3" Grid.Row="2"/>
+                <Image HorizontalAlignment="Right" Height="68" Margin="0,97,194,0" Grid.Row="2" VerticalAlignment="Top" Width="318" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontFamily="Calibri"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="33,36,473,0" Text="Key" Grid.Row="2" Height="21" Padding="0,3,0,0" TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontSize="14"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="41,8,445,0" Text="Settings" Grid.Row="2" Height="19">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <Image x:Name="SendBtn" HorizontalAlignment="Left" Height="38" Margin="467,365,0,0" Grid.Row="2" VerticalAlignment="Top" Width="59" Source="/Images/GeneralButtonDisabled.png" Stretch="UniformToFill" MouseLeftButtonDown="SendBtn_MouseLeftButtonDown" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontSize="15"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="467,375,16,0" Text="Send" Grid.Row="2" Height="18" TextAlignment="Center" IsHitTestVisible="False">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontFamily="Calibri"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="33,69,474,0" Grid.Row="2" Height="21" Padding="0,3,0,0" Text="IV" TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <Image HorizontalAlignment="Right" Height="30" Margin="0,100,199,0" Grid.Row="2" VerticalAlignment="Top" Width="274" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontFamily="Calibri"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="40,104,474,0" Grid.Row="2" Height="21" Padding="0,3,0,0">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect><Run Text="Their"/><Run Text=" "/></TextBlock>
+                <Image HorizontalAlignment="Right" Height="30" Margin="0,132,199,0" Grid.Row="2" VerticalAlignment="Top" Width="225" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontFamily="Calibri"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="40,136,427,0" Grid.Row="2" Height="21" Padding="0,3,0,0">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect><Run Text="Your"/><Run Text=" "/><Run Text="Local"/><Run Text=" I"/><Run Text="P"/><Run Text="v4"/></TextBlock>
+                <TextBox x:Name="ReceiverIP" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="1,3,1,3" Margin="122,135,273,0" Grid.Row="2" Text="192.168.1.1" FontSize="13" TextAlignment="Center" Height="22" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="ReceiverPort" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="-1,3,-1,3" Margin="268,135,230,0" Grid.Row="2" Text="25555" FontSize="13" TextAlignment="Center" Height="22" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="TargetIP" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="1,3,1,3" Margin="122,103,272,0" Grid.Row="2" Text="192.168.1.1" TextAlignment="Center" Height="22" VerticalAlignment="Top" FontSize="13" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox x:Name="TargetPort" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="-1,3,-1,3" Margin="269,103,230,0" Grid.Row="2" Text="25555" TextAlignment="Center" Height="22" VerticalAlignment="Top" FontSize="13" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Image HorizontalAlignment="Right" Height="27" Margin="0,67,199,0" Grid.Row="2" VerticalAlignment="Top" Width="274" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBox x:Name="Key2Input" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="1,3,1,3" Margin="73,69,230,0" Grid.Row="2" TextAlignment="Center" Height="23" VerticalAlignment="Top" Text="AES-256 IV" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" IsEnabled="False">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Image HorizontalAlignment="Right" Height="27" Margin="0,33,199,0" Grid.Row="2" VerticalAlignment="Top" Width="274" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBox x:Name="Key1Input" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="1,3,1,3" Margin="73,35,230,0" Grid.Row="2" TextAlignment="Center" Height="23" VerticalAlignment="Top" Text="AES-256 Key" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Image x:Name="IP1HelpBtn" HorizontalAlignment="Right" Height="19" Margin="0,104,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/GeneralButtonD.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="IP1HelpBtn_MouseDown" Cursor="Hand">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="IP2HelpBtn" HorizontalAlignment="Right" Height="19" Margin="0,136,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/GeneralButtonD.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="IP2HelpBtn_MouseDown" Cursor="Hand">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image HorizontalAlignment="Left" Height="18" Margin="32,5,0,0" VerticalAlignment="Top" Width="18" Grid.RowSpan="2" Source="/Images/CT Logo S.png"/>
+                <Image x:Name="SaveBtn" HorizontalAlignment="Left" Height="18" Margin="354,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Source="/Images/GeneralButtonD.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseLeftButtonDown="SaveBtn_MouseLeftButtonDown"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="358,37,106,0" Grid.Row="2" Height="19" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5"><Run Language="tr-tr" Text="Save Settings"/></TextBlock>
+                <Image x:Name="LoadBtn" HorizontalAlignment="Left" Height="18" Margin="443,37,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Source="/Images/GeneralButtonD.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseLeftButtonDown="LoadBtn_MouseLeftButtonDown"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="447,37,17,0" Grid.Row="2" Height="19" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5"><Run Language="tr-tr" Text="Load"/><Run Text=" Settings"/></TextBlock>
+                <Image x:Name="OpenPortBtn" HorizontalAlignment="Left" Height="18" Margin="443,71,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Source="/Images/GeneralButtonD.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="OpenPortBtn_Click"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="450,71,20,0" Grid.Row="2" Height="18" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5"><Run Language="tr-tr" Text="Open Port"/></TextBlock>
+                <Image x:Name="GenerateKeyBtn" HorizontalAlignment="Left" Height="18" Margin="354,71,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Source="/Images/GeneralButtonD.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="GenerateKeyBtn_MouseDown"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="358,71,106,0" Grid.Row="2" Height="19" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5"><Run Language="tr-tr" Text="Generate Key"/></TextBlock>
+                <Image HorizontalAlignment="Right" Height="68" Margin="0,97,6,0" Grid.Row="2" VerticalAlignment="Top" Width="70" Source="/Images/Panel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="TransmissionBtn" HorizontalAlignment="Left" Height="57" Margin="471,102,0,0" Grid.Row="2" VerticalAlignment="Top" Width="59" Source="/Images/StoppedD.png" Stretch="Fill" MouseDown="TransmissionBtn_MouseDown" MouseEnter="TransmissionButton_MouseEnter" MouseLeave="TransmissionButton_MouseLeave"/>
+                <Image x:Name="TransmissionPanel3" HorizontalAlignment="Left" Height="15" Margin="466,165,0,0" Grid.Row="2" VerticalAlignment="Top" Width="70" Source="/Images/PanelDisabled.png" Stretch="UniformToFill"/>
+                <TextBlock x:Name="TransmissionStatus"
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="482,165,22,0" Grid.Row="2" Height="14" IsHitTestVisible="False" Padding="0,1,0,0" FontFamily="Arial" TextAlignment="Center"><Run Language="tr-tr" Text="Offline"/></TextBlock>
+                <Image x:Name="ListenerFx" HorizontalAlignment="Left" Height="10" Margin="466,180,0,0" Grid.Row="2" VerticalAlignment="Top" Width="70" Source="/Images/ListeningStopped.png" Stretch="UniformToFill"/>
+                <TextBox x:Name="Nickname" Background="Black" Foreground="White" 
+                    FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" 
+                    TextOptions.TextRenderingMode="ClearType" Padding="1,3,1,3" Margin="368,131,96,0" Grid.Row="2" TextAlignment="Center" Height="22" VerticalAlignment="Top" Text="Dummy" TextChanged="UpdateLetterCounter" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Run}">
+                            <Setter Property="Foreground" Value="#FFA31515" />
+                            <Setter Property="FontFamily" Value="Cascadia Mono" />
+                            <Setter Property="FontSize" Value="12.666666666666666" />
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    FontSize="14"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="368,108,96,0" Text="Nickname" Grid.Row="2" Height="19" TextAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <TextBlock x:Name="LetterCounter"
+                    Foreground="#FFD6D6D6"
+                    FontSize="13"
+                    FontFamily="Bahnschrift"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="369,387,82,0" Text="0" Grid.Row="2" Height="15" TextAlignment="Right" IsHitTestVisible="False">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <TextBlock x:Name="EnterMessage"
+                    Foreground="#7FD6D6D6"
+                    FontFamily="Calibri"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="45,365,400,0" Grid.Row="2" Height="21" Padding="0,3,0,0" Text="(Enter a message)" FontSize="11">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect></TextBlock>
+                <Image x:Name="ClearLogBtn" HorizontalAlignment="Left" Height="18" Margin="467,416,0,0" Grid.Row="2" VerticalAlignment="Top" Width="58" Source="/Images/GeneralButtonD.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="ClearLogBtn_MouseDown"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="471,416,20,0" Grid.Row="2" Height="18" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5" Text="Clear"/>
+                <Image x:Name="ClearChatBtn" HorizontalAlignment="Left" Height="18" Margin="403,169,0,0" Grid.Row="2" VerticalAlignment="Top" Width="58" Source="/Images/GeneralButtonDisabled.png" Stretch="UniformToFill" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="ClearChatBtn_MouseDown" IsEnabled="False"/>
+                <TextBlock
+                    Foreground="#FFD6D6D6"
+                    Grid.Column="0"
+                    VerticalAlignment="Top"
+                    Margin="414,169,91,0" Grid.Row="2" Height="18" TextAlignment="Center" IsHitTestVisible="False" Padding="0,1.5,0,0" FontFamily="Arial" FontSize="12.5" Text="Clear"/>
+                <ComboBox x:Name="IPType" HorizontalAlignment="Left" Margin="73,103,0,0" Grid.Row="2" VerticalAlignment="Top" Width="50" SelectedIndex="0" Background="{x:Null}">
+                    <ComboBoxItem Content="IPv4"/>
+                    <ComboBoxItem Content="IPv6"/>
+                </ComboBox>
+                <CheckBox x:Name="AdvancedConsole" Content="Display Message Details" HorizontalAlignment="Left" Margin="313,416,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="White" Cursor="Hand"/>
+                <Image x:Name="RevealKey1Btn" HorizontalAlignment="Right" Height="19" Margin="0,37,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/GeneralButtonD.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="RevealKey1Btn_MouseDown" Cursor="Hand">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="RevealKey2Btn" HorizontalAlignment="Right" Height="19" Margin="0,71,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/GeneralButtonD.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseLeave" MouseDown="RevealKey2Btn_MouseDown" Cursor="Hand">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="IP2HelpBtn_Icon" HorizontalAlignment="Right" Height="15" Margin="0,138,208,0" Grid.Row="2" VerticalAlignment="Top" Width="16" Source="/Images/Question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" IsEnabled="False" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="IP1HelpBtn_Icon" HorizontalAlignment="Right" Height="15" Margin="0,106,208,0" Grid.Row="2" VerticalAlignment="Top" Width="16" Source="/Images/Question.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" IsEnabled="False" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="RevealKey1Btn_Icon" HorizontalAlignment="Right" Height="19" Margin="0,37,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/Visible.png" RenderTransformOrigin="0.5,0.5" Stretch="Fill" IsEnabled="False" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Image x:Name="RevealKey2Btn_Icon" HorizontalAlignment="Right" Height="19" Margin="0,71,206,0" Grid.Row="2" VerticalAlignment="Top" Width="20" Source="/Images/Visible.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" IsEnabled="False" IsHitTestVisible="False">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" ShadowDepth="2"/>
+                    </Image.Effect>
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Grid x:Name="InfoGrid" Margin="72,94,48,90" Grid.Row="2" IsEnabled="False" Opacity="0" Visibility="Hidden">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Images/bgpanel.png"/>
+                    </Grid.Background>
+
+                    <Image HorizontalAlignment="Center" Width="422" Source="/Images/bgpanel.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" Height="390" VerticalAlignment="Center" Opacity="0.25">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image HorizontalAlignment="Center" Width="422" Source="/Images/GeneralButton.png" ClipToBounds="True" Height="27" VerticalAlignment="Top" OpacityMask="Black" Stretch="Fill">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+
+                    <TextBlock x:Name="WhatText" Background="Black" Foreground="White" FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Padding="5" FontSize="11" TextAlignment="Justify" TextWrapping="Wrap" Margin="12,32,12,310" ><Run Text="Cryptic Transmitter is a"/><Run Language="tr-tr" Text=" basic"/><Run Text=" open-source chat application that "/><Run Language="tr-tr" Text="offers"/><Run Text=" direct peer-to-peer communication"/><Run Language="tr-tr" Text=" without depending on a server and"/><Run Text=" us"/><Run Language="tr-tr" Text="es"/><Run Text=" end-to-end AES-256"/><Run Language="tr-tr" Text="-GCM"/><Run Text=" encryption for message transmission."/><LineBreak/><Run/></TextBlock>
+                    <TextBlock x:Name="WhatHeader" Text="What is it?"
+                        Foreground="DarkGray"
+                        FontFamily="Bahnschrift"                             
+                        Margin="0,6,0,0" FontSize="13" TextAlignment="Center" HorizontalAlignment="Center" Width="398" Height="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <Image x:Name="Return" Source="/Images/GeneralButton.png" Cursor="Hand" Margin="0,347,0,0" Stretch="Fill" HorizontalAlignment="Center" Width="118" Height="22" VerticalAlignment="Top" MouseDown="Return_MouseDown" MouseEnter="Return_MouseEnter" MouseLeave="Return_MouseLeave" >
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock Text="Return" Foreground="#FFD2D2D2" Margin="0,349,0,0" TextAlignment="Center" Cursor="Hand" IsHitTestVisible="False" HorizontalAlignment="Center" Width="90" Height="20" VerticalAlignment="Top" />
+                    <Image HorizontalAlignment="Center" Width="422" Source="/Images/GeneralButton.png" ClipToBounds="True" Height="27" VerticalAlignment="Top" OpacityMask="Black" Stretch="Fill" Margin="0,85,0,0">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock x:Name="WhereHeader" Text="Where can I use it?"
+                        Foreground="DarkGray"
+                        FontFamily="Bahnschrift"                             
+                        Margin="0,91,0,0" FontSize="13" TextAlignment="Center" HorizontalAlignment="Center" Width="398" Height="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBlock x:Name="WhereText" Background="Black" Foreground="White" FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Padding="5" FontSize="11" TextAlignment="Justify" TextWrapping="Wrap" Margin="10,117,10,224" ><Run Text="Cryptic Transmitter "/><Run Text="could be used"/><Run Text=" for private conversations, testing encrypted communication, educational purposes related to cryptography or any scenario where direct, encrypted messaging without third-party servers is preferred."/></TextBlock>
+                    <Image HorizontalAlignment="Center" Width="422" Source="/Images/GeneralButton.png" ClipToBounds="True" Height="28" VerticalAlignment="Top" OpacityMask="Black" Stretch="Fill" Margin="0,173,0,0">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock x:Name="HowHeader" Text="How can I use it?"
+                        Foreground="DarkGray"
+                        FontFamily="Bahnschrift" FontSize="13" TextAlignment="Center" HorizontalAlignment="Center" Width="398" Height="14" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="0,180,0,0">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                    <TextBlock x:Name="HowText" Background="Black" Foreground="White" FontFamily="Bahnschrift Light" TextOptions.TextFormattingMode="Display" TextOptions.TextRenderingMode="ClearType" Padding="5" FontSize="11" TextAlignment="Justify" TextWrapping="Wrap" Margin="12,205,12,121" ><Run Text="Generate your AES-256 key"/><Run Text=" and"/><Run Text=" exchange it with the other party, and specify the target IP address and port. The software can automatically open "/><Run Language="tr-tr" Text="a "/><Run Text="port "/><Run Language="tr-tr" Text="to"/><Run Text=" establish a communication channel. Once connected, messages sent and received will be encrypted and displayed in real time."/><Run Language="tr-tr" Text=" (IPv6 recommended)"/></TextBlock>
+                    <Image x:Name="Discord" Source="/Images/discord.png" Cursor="Hand" Margin="329,342,0,0" Stretch="Fill" ToolTip="Discord Group" HorizontalAlignment="Left" Width="32" Height="32" VerticalAlignment="Top" MouseEnter="Discord_MouseEnter" MouseLeave="Discord_MouseLeave" MouseDown="Discord_MouseDown" >
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image x:Name="Github" Source="/Images/Github.png" Cursor="Hand" Margin="372,342,0,0" Stretch="Fill" ToolTip="GitHub" HorizontalAlignment="Left" Width="32" Height="32" VerticalAlignment="Top" MouseEnter="Github_MouseEnter" MouseLeave="Github_MouseLeave" MouseDown="Github_MouseDown" >
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image x:Name="Website" Source="/Images/Website.png" Cursor="Hand" Margin="287,342,0,0" Stretch="Fill" ToolTip="Portfolio" HorizontalAlignment="Left" Width="32" Height="32" VerticalAlignment="Top" MouseEnter="Website_MouseEnter" MouseLeave="Website_MouseLeave" MouseDown="Website_MouseDown" >
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <Image HorizontalAlignment="Center" Width="422" Source="/Images/GeneralButton.png" ClipToBounds="True" Height="28" VerticalAlignment="Top" OpacityMask="Black" Stretch="Fill" Margin="0,299,0,0">
+                        <Image.Effect>
+                            <DropShadowEffect/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock x:Name="Author" Text="Developed by Ms. Dysphoria"
+                        Foreground="DarkGray"
+                        FontFamily="Bahnschrift" FontSize="13" TextAlignment="Center" HorizontalAlignment="Center" Width="398" Height="14" VerticalAlignment="Top" Margin="0,306,0,0"/>
+
+                </Grid>
+                <TextBlock x:Name="Info" Text="For More Info :"
+                    Foreground="DarkGray"
+                    FontFamily="Bahnschrift"                             
+                    Margin="353,1,0,0" FontSize="13" TextAlignment="Right" Grid.Row="1" HorizontalAlignment="Left" Width="108" Height="14" VerticalAlignment="Top" IsHitTestVisible="False"/>
+            </Grid>
+
+        </Border>
+
+    </Border>
+
+</Window>

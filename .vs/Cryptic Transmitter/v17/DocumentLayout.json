@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\cryptoengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\cryptoengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\transmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\transmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\firewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\firewall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\checker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\checker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|c:\\users\\ms dysphoria\\source\\repos\\cryptic transmitter\\cryptic transmitter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56CDF9DB-7193-4362-BECB-0986C4897547}|Cryptic Transmitter\\Cryptic Transmitter.csproj|solutionrelative:cryptic transmitter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\MainWindow.xaml",
+              "RelativeToolTip": "Cryptic Transmitter\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2023-09-11T10:18:01.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CryptoEngine.cs",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\CryptoEngine.cs",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\CryptoEngine.cs",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\CryptoEngine.cs",
+              "RelativeToolTip": "Cryptic Transmitter\\CryptoEngine.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T00:21:35.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transmission.cs",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Transmission.cs",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\Transmission.cs",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Transmission.cs",
+              "RelativeToolTip": "Cryptic Transmitter\\Transmission.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T00:22:11.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Firewall.cs",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Firewall.cs",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\Firewall.cs",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Firewall.cs",
+              "RelativeToolTip": "Cryptic Transmitter\\Firewall.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAIwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T00:20:46.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Checker.cs",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Checker.cs",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\Checker.cs",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Checker.cs",
+              "RelativeToolTip": "Cryptic Transmitter\\Checker.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-09T23:59:08.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Cryptic Transmitter\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Cryptic Transmitter\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAIACAAAAAAAAAAAewI4CAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-09-11T10:17:54.762Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

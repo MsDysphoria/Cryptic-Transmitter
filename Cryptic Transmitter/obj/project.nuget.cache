@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "67Mr6qunAcE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ms Dysphoria\\source\\repos\\Cryptic Transmitter\\Cryptic Transmitter\\Cryptic Transmitter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ms Dysphoria\\.nuget\\packages\\libsodium\\1.0.19\\libsodium.1.0.19.nupkg.sha512",
+    "C:\\Users\\Ms Dysphoria\\.nuget\\packages\\nsec.cryptography\\24.4.0\\nsec.cryptography.24.4.0.nupkg.sha512",
+    "C:\\Users\\Ms Dysphoria\\.nuget\\packages\\wpfanimatedgif\\2.0.2\\wpfanimatedgif.2.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
