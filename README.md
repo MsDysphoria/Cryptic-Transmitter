@@ -1,5 +1,5 @@
 # Cryptic Transmitter
-![CT Banner Image](https://github.com/user-attachments/assets/621b66b2-1026-467f-914e-a0d50ab9d863)
+![CT Banner Image](https://github.com/user-attachments/assets/d53e4c5e-00fc-4d73-9afd-f5453685c870)
 
 [![License](https://img.shields.io/badge/license-Ms._Dysphoria-blue.svg)](LICENSE)
 
@@ -36,7 +36,7 @@ If your internet connection is behind CGNAT, direct connections using public IPv
 
 ## Screenshot
 
-<img width="524" height="610" alt="image" src="https://github.com/user-attachments/assets/4916c965-c05d-4680-846b-3cc4cf1b0a7f" />
+<img width="524" height="610" alt="image" src="https://github.com/user-attachments/assets/c00f4e74-2adc-4c6e-bfa6-1e4c984083b3" />
 
 
 
